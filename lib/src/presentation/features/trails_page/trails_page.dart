@@ -84,7 +84,7 @@ class TrailsPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TrailDetailsPage(trailIndex: 15),
+                              builder: (context) => const TrailDetailsPage(trailIndex: 3),
                             ),
                           );
                         },
