@@ -1,4 +1,5 @@
 import 'package:explore/src/application/constants/app_colors.dart';
+import 'package:explore/src/presentation/features/place_details_page/place_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,7 +121,14 @@ class _TrailDetailsPageState extends State<TrailDetailsPage> with SingleTickerPr
                                 borderRadius: BorderRadius.circular(12),
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(12),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const PlaceDetailsPage(),
+                                      ),
+                                    );
+                                  },
                                   child: Padding(
                                     padding: const EdgeInsets.all(14),
                                     child: Column(
