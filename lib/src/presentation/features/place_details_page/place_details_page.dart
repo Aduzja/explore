@@ -75,50 +75,201 @@ class PlaceDetailsPage extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              ExpansionTile(
-                title: Row(
-                  children: [
-                    Icon(
-                      Icons.circle,
-                      color: AppColors.green,
-                      size: 20,
-                    ),
-                    SizedBox(width: 8),
-                    Text('10.00-20.00'),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: AppColors.darkBlue,
-                    ),
+              Theme(
+                data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                child: ExpansionTile(
+                  iconColor: AppColors.darkBlue,
+                  tilePadding: EdgeInsets.all(0),
+                  showTrailingIcon: false,
+                  title: Row(
+                    children: [
+                      Icon(
+                        Icons.circle,
+                        color: AppColors.green,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        '10.00-20.00',
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 20,
+                          color: AppColors.darkBlue,
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        color: AppColors.darkBlue,
+                        size: 30,
+                      ),
+                    ],
+                  ),
+                  children: <Widget>[
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Poniedziałek',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Wtorek',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Środa',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Czwartek',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Piątek',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Sobota',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Niedziela',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '10.00-20.00',
+                                style: GoogleFonts.roboto(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
-                children: <Widget>[
-                  ListTile(
-                    title: Text('Poniedziałek: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Wtorek: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Środa: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Czwartek: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Piątek: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Sobota: 10.00-20.00'),
-                  ),
-                  ListTile(
-                    title: Text('Niedziela: 10.00-20.00'),
-                  ),
-                ],
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                ),
+              SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
                   'assets/images/fabryka.jpeg',
                   width: double.infinity,
@@ -126,6 +277,7 @@ class PlaceDetailsPage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+              SizedBox(height: 12),
               Text(
                 'Opis szczegółowy',
                 style: GoogleFonts.roboto(
@@ -133,6 +285,7 @@ class PlaceDetailsPage extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
+              SizedBox(height: 12),
               Row(
                 children: [
                   Image.asset(
@@ -143,7 +296,7 @@ class PlaceDetailsPage extends StatelessWidget {
                     'Udogodnienia dla osób z niepełnosprawnością',
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -158,7 +311,7 @@ class PlaceDetailsPage extends StatelessWidget {
                     'Parking',
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -173,7 +326,7 @@ class PlaceDetailsPage extends StatelessWidget {
                     'Język: polski, angielski',
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -188,7 +341,7 @@ class PlaceDetailsPage extends StatelessWidget {
                     'Płatne',
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -203,7 +356,7 @@ class PlaceDetailsPage extends StatelessWidget {
                     'Zwierzęta dozwolone',
                     style: GoogleFonts.roboto(
                       fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -278,7 +431,7 @@ class PlaceDetailsPage extends StatelessWidget {
               Row(
                 children: [
                   Image.asset(
-                    'assets/icons/facebook_icon.png',
+                    'assets/icons/fb_icon.png',
                   ),
                   SizedBox(width: 6),
                   Image.asset(

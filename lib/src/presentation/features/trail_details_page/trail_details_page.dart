@@ -121,14 +121,7 @@ class _TrailDetailsPageState extends State<TrailDetailsPage> with SingleTickerPr
                                 borderRadius: BorderRadius.circular(12),
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(12),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const PlaceDetailsPage(),
-                                      ),
-                                    );
-                                  },
+                                  onTap: () {},
                                   child: Padding(
                                     padding: const EdgeInsets.all(14),
                                     child: Column(
@@ -168,7 +161,14 @@ class _TrailDetailsPageState extends State<TrailDetailsPage> with SingleTickerPr
                                 elevation: 4,
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(12),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const PlaceDetailsPage(),
+                                      ),
+                                    );
+                                  },
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
