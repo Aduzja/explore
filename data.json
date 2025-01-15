@@ -27,6 +27,30 @@
         "phone": "+48 123 456 789"
       },
       "partOfTrail": true
+    },
+      {
+      "id": "2",
+      "name": "Muzeum Przemysłu Włókienniczego",
+      "location": "Łódź",
+      "estimatedVisitDuration": "2h",
+      "imageUrl": "https://example.com/image2.jpg",
+      "partOfTrail": true
+    },
+    {
+      "id": "3",
+      "name": "Stara Elektrownia",
+      "location": "Katowice",
+      "estimatedVisitDuration": "1h",
+      "imageUrl": "https://example.com/image3.jpg",
+      "partOfTrail": true
+    },
+    {
+      "id": "4",
+      "name": "Zabytkowa Kopalnia",
+      "location": "Zabrze",
+      "estimatedVisitDuration": "1h",
+      "imageUrl": "https://example.com/image4.jpg",
+      "partOfTrail": true
     }
   ]
 }
