@@ -1,5 +1,5 @@
 import 'package:explore/src/application/constants/app_colors.dart';
-import 'package:explore/src/presentation/features/trail_details_page/trail_details_page.dart';
+import 'package:explore/src/presentation/features/trail_objects_page/trail_objects_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -84,7 +84,7 @@ class TrailsPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TrailDetailsPage(trailIndex: 3),
+                              builder: (context) => const TrailObjectsPage(trailIndex: 3),
                             ),
                           );
                         },

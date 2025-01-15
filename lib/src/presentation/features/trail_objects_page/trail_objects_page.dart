@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TrailDetailsPage extends StatefulWidget {
+class TrailObjectsPage extends StatefulWidget {
   final int trailIndex;
 
-  const TrailDetailsPage({super.key, required this.trailIndex});
+  const TrailObjectsPage({super.key, required this.trailIndex});
 
   @override
-  _TrailDetailsPageState createState() => _TrailDetailsPageState();
+  _TrailObjectsPageState createState() => _TrailObjectsPageState();
 }
 
-class _TrailDetailsPageState extends State<TrailDetailsPage> with SingleTickerProviderStateMixin {
+class _TrailObjectsPageState extends State<TrailObjectsPage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
