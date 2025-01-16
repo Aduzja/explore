@@ -4,13 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  final int selectedIndex;
-  final ValueChanged<int> onItemTapped;
+  final int currentIndex;
+  final Function(int) onTap;
 
   const CustomBottomNavigationBar({
-    super.key,
-    required this.selectedIndex,
-    required this.onItemTapped,
+    required this.currentIndex,
+    required this.onTap,
   });
 
   @override
@@ -98,8 +97,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
             label: 'Eksploruj',
           ),
         ],
-        currentIndex: selectedIndex,
-        onTap: onItemTapped,
+        currentIndex: currentIndex,
+        onTap: onTap,
         selectedItemColor: AppColors.darkGrey,
         selectedLabelStyle: GoogleFonts.roboto(
           fontWeight: FontWeight.w900,
