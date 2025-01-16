@@ -8,28 +8,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onItemTapped: _onItemTapped,
+      bottomNavigationBar: BlocBuilder<RootCubit, RootState>(
+        builder: (context, state) {
+          return CustomBottomNavigationBar(
+            currentIndex: state.selectedIndex,
+            onTap: (index) {
+              context.read<RootCubit>().selectTab(index);
+            },
+          );
+        },
       ),
       appBar: AppBar(
         toolbarHeight: 80,
