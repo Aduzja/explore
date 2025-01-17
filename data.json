@@ -100,6 +100,20 @@
     },
     {
       "id": "4",
+      "name": "Gala muzyki filmowej",
+      "location": "Katowice, Spodek",
+      "category": "WYDARZENIA",
+      "imageUrl": "https://example.com/gala.jpg"
+    },
+     {
+      "id": "5",
+      "name": "Muzeum Górnośląski Park Etnograficzny",
+      "location": "Chorzów",
+      "category": "EKSPLORUJ",
+      "imageUrl": "https://example.com/muzeum1.jpg"
+    },
+    {
+      "id": "6",
       "name": "Muzeum Historyczne",
       "location": "Bielsko-Biała",
       "category": "EKSPLORUJ",
