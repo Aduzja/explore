@@ -204,9 +204,9 @@ class HomePage extends StatelessWidget {
                                                   : index == 3
                                                       ? 'assets/images/muzyka_filmowa.jpeg'
                                                       : index == 4
-                                                          ? 'assets/images/historyczne.jpeg'
+                                                          ? 'assets/images/park_etno.jpeg'
                                                           : index == 5
-                                                              ? 'assets/images/śląskie.jpeg'
+                                                              ? 'assets/images/historyczne.jpeg'
                                                               : 'assets/images/trail.jpg',
                                     ),
                                     fit: BoxFit.cover,
