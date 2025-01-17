@@ -5,7 +5,7 @@
       "totalSites": 40,
       "items": [
         {
-          "id": "1",
+          "id": "2",
           "name": "Stara Fabryka",
           "location": "Bielsko-Biała",
           "address": "ul. Podwale 3, 43-300 Bielsko-Biała, Polska",
@@ -38,7 +38,7 @@
           "partOfTrail": true
         },
         {
-          "id": "3",
+          "id": "1",
           "name": "Kopalnia Guido",
           "location": "Zabrze",
           "estimatedVisitDuration": "2h",
@@ -107,3 +107,5 @@
     }
   ]
 }
+
+

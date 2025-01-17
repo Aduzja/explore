@@ -4,18 +4,32 @@ part 'trail_data.g.dart';
 
 @JsonSerializable()
 class TrailData {
+  final List<Trail> trails;
+  final List<HomepageItem> homepageItems;
+
+  TrailData({
+    required this.trails,
+    required this.homepageItems,
+  });
+
+  factory TrailData.fromJson(Map<String, dynamic> json) => _$TrailDataFromJson(json);
+  Map<String, dynamic> toJson() => _$TrailDataToJson(this);
+}
+
+@JsonSerializable()
+class Trail {
   final String trailName;
   final int totalSites;
   final List<TrailItem> items;
 
-  TrailData({
+  Trail({
     required this.trailName,
     required this.totalSites,
     required this.items,
   });
 
-  factory TrailData.fromJson(Map<String, dynamic> json) => _$TrailDataFromJson(json);
-  Map<String, dynamic> toJson() => _$TrailDataToJson(this);
+  factory Trail.fromJson(Map<String, dynamic> json) => _$TrailFromJson(json);
+  Map<String, dynamic> toJson() => _$TrailToJson(this);
 }
 
 @JsonSerializable()
@@ -26,7 +40,7 @@ class TrailItem {
   final String? address;
   final String? estimatedVisitDuration;
   final String? description;
-  final String imageUrl;
+  final String? imageUrl;
   final List<String>? amenities;
   final List<String>? languages;
   final OpeningHours? openingHours;
@@ -40,7 +54,7 @@ class TrailItem {
     this.address,
     this.estimatedVisitDuration,
     this.description,
-    required this.imageUrl,
+    this.imageUrl,
     this.amenities,
     this.languages,
     this.openingHours,
@@ -50,6 +64,26 @@ class TrailItem {
 
   factory TrailItem.fromJson(Map<String, dynamic> json) => _$TrailItemFromJson(json);
   Map<String, dynamic> toJson() => _$TrailItemToJson(this);
+}
+
+@JsonSerializable()
+class HomepageItem {
+  final String id;
+  final String name;
+  final String location;
+  final String category;
+  final String imageUrl;
+
+  HomepageItem({
+    required this.id,
+    required this.name,
+    required this.location,
+    required this.category,
+    required this.imageUrl,
+  });
+
+  factory HomepageItem.fromJson(Map<String, dynamic> json) => _$HomepageItemFromJson(json);
+  Map<String, dynamic> toJson() => _$HomepageItemToJson(this);
 }
 
 @JsonSerializable()

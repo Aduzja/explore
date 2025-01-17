@@ -7,6 +7,20 @@ part of 'trail_data.dart';
 // **************************************************************************
 
 TrailData _$TrailDataFromJson(Map<String, dynamic> json) => TrailData(
+      trails: (json['trails'] as List<dynamic>)
+          .map((e) => Trail.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      homepageItems: (json['homepageItems'] as List<dynamic>)
+          .map((e) => HomepageItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$TrailDataToJson(TrailData instance) => <String, dynamic>{
+      'trails': instance.trails,
+      'homepageItems': instance.homepageItems,
+    };
+
+Trail _$TrailFromJson(Map<String, dynamic> json) => Trail(
       trailName: json['trailName'] as String,
       totalSites: (json['totalSites'] as num).toInt(),
       items: (json['items'] as List<dynamic>)
@@ -14,7 +28,7 @@ TrailData _$TrailDataFromJson(Map<String, dynamic> json) => TrailData(
           .toList(),
     );
 
-Map<String, dynamic> _$TrailDataToJson(TrailData instance) => <String, dynamic>{
+Map<String, dynamic> _$TrailToJson(Trail instance) => <String, dynamic>{
       'trailName': instance.trailName,
       'totalSites': instance.totalSites,
       'items': instance.items,
@@ -27,7 +41,7 @@ TrailItem _$TrailItemFromJson(Map<String, dynamic> json) => TrailItem(
       address: json['address'] as String?,
       estimatedVisitDuration: json['estimatedVisitDuration'] as String?,
       description: json['description'] as String?,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['imageUrl'] as String?,
       amenities: (json['amenities'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -56,6 +70,23 @@ Map<String, dynamic> _$TrailItemToJson(TrailItem instance) => <String, dynamic>{
       'openingHours': instance.openingHours,
       'contactInfo': instance.contactInfo,
       'partOfTrail': instance.partOfTrail,
+    };
+
+HomepageItem _$HomepageItemFromJson(Map<String, dynamic> json) => HomepageItem(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      location: json['location'] as String,
+      category: json['category'] as String,
+      imageUrl: json['imageUrl'] as String,
+    );
+
+Map<String, dynamic> _$HomepageItemToJson(HomepageItem instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'location': instance.location,
+      'category': instance.category,
+      'imageUrl': instance.imageUrl,
     };
 
 OpeningHours _$OpeningHoursFromJson(Map<String, dynamic> json) => OpeningHours(
