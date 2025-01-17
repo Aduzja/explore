@@ -7,10 +7,10 @@ class RootState {
   final String errorMessage;
   final TrailData? trailData;
 
-  RootState({
+  const RootState({
     required this.isLoading,
     required this.errorMessage,
-    this.trailData,
-     this.selectedIndex = 0,
+    required this.trailData,
+    this.selectedIndex = 0,
   });
 }

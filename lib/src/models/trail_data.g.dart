@@ -24,18 +24,22 @@ TrailItem _$TrailItemFromJson(Map<String, dynamic> json) => TrailItem(
       id: json['id'] as String,
       name: json['name'] as String,
       location: json['location'] as String,
-      address: json['address'] as String,
-      estimatedVisitDuration: json['estimatedVisitDuration'] as String,
-      description: json['description'] as String,
+      address: json['address'] as String?,
+      estimatedVisitDuration: json['estimatedVisitDuration'] as String?,
+      description: json['description'] as String?,
       imageUrl: json['imageUrl'] as String,
-      amenities:
-          (json['amenities'] as List<dynamic>).map((e) => e as String).toList(),
-      languages:
-          (json['languages'] as List<dynamic>).map((e) => e as String).toList(),
-      openingHours:
-          OpeningHours.fromJson(json['openingHours'] as Map<String, dynamic>),
-      contactInfo:
-          ContactInfo.fromJson(json['contactInfo'] as Map<String, dynamic>),
+      amenities: (json['amenities'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      languages: (json['languages'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      openingHours: json['openingHours'] == null
+          ? null
+          : OpeningHours.fromJson(json['openingHours'] as Map<String, dynamic>),
+      contactInfo: json['contactInfo'] == null
+          ? null
+          : ContactInfo.fromJson(json['contactInfo'] as Map<String, dynamic>),
       partOfTrail: json['partOfTrail'] as bool,
     );
 
@@ -55,13 +59,13 @@ Map<String, dynamic> _$TrailItemToJson(TrailItem instance) => <String, dynamic>{
     };
 
 OpeningHours _$OpeningHoursFromJson(Map<String, dynamic> json) => OpeningHours(
-      monday: json['Poniedziałek'] as String,
-      tuesday: json['Wtorek'] as String,
-      wednesday: json['Środa'] as String,
-      thursday: json['Czwartek'] as String,
-      friday: json['Piątek'] as String,
-      saturday: json['Sobota'] as String,
-      sunday: json['Niedziela'] as String,
+      monday: json['Poniedziałek'] as String?,
+      tuesday: json['Wtorek'] as String?,
+      wednesday: json['Środa'] as String?,
+      thursday: json['Czwartek'] as String?,
+      friday: json['Piątek'] as String?,
+      saturday: json['Sobota'] as String?,
+      sunday: json['Niedziela'] as String?,
     );
 
 Map<String, dynamic> _$OpeningHoursToJson(OpeningHours instance) =>
@@ -76,9 +80,9 @@ Map<String, dynamic> _$OpeningHoursToJson(OpeningHours instance) =>
     };
 
 ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) => ContactInfo(
-      website: json['website'] as String,
-      email: json['email'] as String,
-      phone: json['phone'] as String,
+      website: json['website'] as String?,
+      email: json['email'] as String?,
+      phone: json['phone'] as String?,
     );
 
 Map<String, dynamic> _$ContactInfoToJson(ContactInfo instance) =>

@@ -49,6 +49,7 @@ class RootCubit extends Cubit<RootState> {
       selectedIndex: index,
       isLoading: false,
       errorMessage: '',
+      trailData: null,
     ));
   }
 }
