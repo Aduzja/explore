@@ -19,7 +19,8 @@ class HomePage extends StatelessWidget {
           return CustomBottomNavigationBar(
             currentIndex: state.selectedIndex,
             onTap: (index) {
-              context.read<RootCubit>().selectTab(index);
+              // Bottom nav bar działa z tą linijką kodu
+              // context.read<RootCubit>().selectTab(index);
             },
           );
         },
@@ -38,27 +39,26 @@ class HomePage extends StatelessWidget {
           ),
           color: AppColors.backgroundGrey,
         ),
-        child: BlocBuilder<RootCubit, RootState>(
-          builder: (context, state) {
-            if (state.errorMessage.isNotEmpty) {
-              return Center(
-                child: Text(
-                  state.errorMessage,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 16,
-                  ),
+        child: BlocBuilder<RootCubit, RootState>(builder: (context, state) {
+          if (state.errorMessage.isNotEmpty) {
+            return Center(
+              child: Text(
+                state.errorMessage,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 16,
                 ),
-              );
-            }
-            if (state.isLoading) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.darkBlue,
-                  backgroundColor: AppColors.lightGrey,
-                ),
-              );
-            }
+              ),
+            );
+          }
+          if (state.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(
+                color: AppColors.darkBlue,
+                backgroundColor: AppColors.lightGrey,
+              ),
+            );
+          } else if (state.trailData != null) {
             return ListView(
               children: [
                 Column(
@@ -92,7 +92,8 @@ class HomePage extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 8,
                     crossAxisSpacing: 8,
-                    children: List.generate(10, (index) {
+                    children: List.generate(state.trailData!.homepageItems.length, (index) {
+                      final item = state.trailData!.homepageItems[index];
                       if (index == 0) {
                         return StaggeredGridTile.extent(
                           crossAxisCellCount: 1,
@@ -192,8 +193,22 @@ class HomePage extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
-                                  image: const DecorationImage(
-                                    image: AssetImage('assets/images/planetarium.jpg'),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      index == 0
+                                          ? 'assets/images/trail.jpg'
+                                          : index == 1
+                                              ? 'assets/images/planetarium.jpg'
+                                              : index == 2
+                                                  ? 'assets/images/drewniana.jpeg'
+                                                  : index == 3
+                                                      ? 'assets/images/muzyka_filmowa.jpeg'
+                                                      : index == 4
+                                                          ? 'assets/images/historyczne.jpeg'
+                                                          : index == 5
+                                                              ? 'assets/images/śląskie.jpeg'
+                                                              : 'assets/images/trail.jpg',
+                                    ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -238,7 +253,7 @@ class HomePage extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Planetarium $index',
+                                                item.name.length > 12 ? '${item.name.substring(0, 12)}...' : item.name,
                                                 style: GoogleFonts.roboto(
                                                   color: AppColors.white,
                                                   fontWeight: FontWeight.w700,
@@ -246,7 +261,7 @@ class HomePage extends StatelessWidget {
                                                 ),
                                               ),
                                               Text(
-                                                'Eksploruj $index'.toUpperCase(),
+                                                item.category,
                                                 style: GoogleFonts.roboto(
                                                   color: AppColors.white,
                                                   fontWeight: FontWeight.w300,
@@ -270,8 +285,17 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             );
-          },
-        ),
+          }
+          return const Center(
+            child: Text(
+              'Brak danych',
+              style: TextStyle(
+                fontWeight: FontWeight.w300,
+                fontSize: 16,
+              ),
+            ),
+          );
+        }),
       ),
     );
   }

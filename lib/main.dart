@@ -13,3 +13,5 @@ void main() {
     ),
   );
 }
+
+// Jedynie przykładowe dane zaciągane są z data.json

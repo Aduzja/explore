@@ -13,6 +13,7 @@ class RootCubit extends Cubit<RootState> {
           isLoading: false,
           errorMessage: '',
           trailData: null,
+          selectedTrailItems: [],
         ));
 
   Future<void> start() async {
@@ -21,6 +22,7 @@ class RootCubit extends Cubit<RootState> {
         isLoading: true,
         errorMessage: '',
         trailData: null,
+        selectedTrailItems: [],
       ),
     );
 
@@ -31,6 +33,7 @@ class RootCubit extends Cubit<RootState> {
           isLoading: false,
           errorMessage: '',
           trailData: trailData,
+          selectedTrailItems: [],
         ),
       );
     } catch (e) {
@@ -39,9 +42,21 @@ class RootCubit extends Cubit<RootState> {
           isLoading: false,
           errorMessage: 'Błąd pobierania danych: $e',
           trailData: null,
+          selectedTrailItems: [],
         ),
       );
     }
+  }
+
+  void selectTrailItems(List<TrailItem> items) {
+    emit(
+      RootState(
+        isLoading: false,
+        errorMessage: '',
+        trailData: state.trailData,
+        selectedTrailItems: items,
+      ),
+    );
   }
 
   void selectTab(int index) {
@@ -49,6 +64,8 @@ class RootCubit extends Cubit<RootState> {
       selectedIndex: index,
       isLoading: false,
       errorMessage: '',
+      trailData: null,
+      selectedTrailItems: [],
     ));
   }
 }
