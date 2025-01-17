@@ -1,56 +1,109 @@
 {
-  "trailName": "Szlak Zabytków Techniki",
-  "totalSites": 40,
-  "items": [
+  "trails": [
+    {
+      "trailName": "Szlak Zabytków Techniki",
+      "totalSites": 40,
+      "items": [
+        {
+          "id": "1",
+          "name": "Stara Fabryka",
+          "location": "Bielsko-Biała",
+          "address": "ul. Podwale 3, 43-300 Bielsko-Biała, Polska",
+          "estimatedVisitDuration": "1,5h",
+          "description": "Muzeum przemysłowe prezentujące historię tekstyliów i przemysłu w regionie.",
+          "imageUrl": "https://example.com/image.jpg",
+          "amenities": ["Parking", "Zwierzęta dozwolone", "Przewodnik audio"],
+          "languages": ["polski", "angielski"],
+          "openingHours": {
+            "Poniedziałek": "Zamknięte",
+            "Wtorek": "10.00-15.00",
+            "Środa": "10.00-18.00",
+            "Czwartek": "10.00-18.00",
+            "Piątek": "10.00-18.00",
+            "Sobota": "10.00-20.00",
+            "Niedziela": "10.00-20.00"
+          },
+          "contactInfo": {
+            "website": "https://stara-fabryka.pl",
+            "email": "stara.fabryka@example.com",
+            "phone": "+48 123 456 789"
+          },
+          "partOfTrail": true
+        },
+        {
+          "id": "2",
+          "name": "Muzeum Hutnictwa",
+          "location": "Chorzów",
+          "estimatedVisitDuration": "1h",
+          "partOfTrail": true
+        },
+        {
+          "id": "3",
+          "name": "Kopalnia Guido",
+          "location": "Zabrze",
+          "estimatedVisitDuration": "2h",
+          "partOfTrail": true
+        },
+        {
+          "id": "4",
+          "name": "Muzeum Techniki",
+          "location": "Katowice",
+          "estimatedVisitDuration": "1,5h",
+          "partOfTrail": true
+        },
+        {
+          "id": "5",
+          "name": "Zabytkowa Kopalnia Srebra",
+          "location": "Tarnowskie Góry",
+          "estimatedVisitDuration": "1h",
+          "partOfTrail": true
+        }
+      ]
+    },
+    {
+      "trailName": "Szlak Orlich Gniazd",
+      "totalSites": 14,
+      "items": []
+    },
+    {
+      "trailName": "Szlak Architektury Drewnianej",
+      "totalSites": 20,
+      "items": []
+    },
+    {
+      "trailName": "Szlak Kulinarny Śląskie Smaki",
+      "totalSites": 14,
+      "items": []
+    }
+  ],
+  "homepageItems": [
     {
       "id": "1",
-      "name": "Stara Fabryka",
-      "location": "Bielsko-Biała",
-      "address": "ul. Podwale 3, 43-300 Bielsko-Biała, Polska",
-      "estimatedVisitDuration": "1,5h",
-      "description": "Muzeum przemysłowe prezentujące historię tekstyliów i przemysłu w regionie.",
-      "imageUrl": "https://example.com/image.jpg",
-      "amenities": ["Parking", "Zwierzęta dozwolone", "Przewodnik audio"],
-      "languages": ["polski", "angielski"],
-      "openingHours": {
-        "Poniedziałek": "Zamknięte",
-        "Wtorek": "10.00-15.00",
-        "Środa": "10.00-18.00",
-        "Czwartek": "10.00-18.00",
-        "Piątek": "10.00-18.00",
-        "Sobota": "10.00-20.00",
-        "Niedziela": "10.00-20.00"
-      },
-      "contactInfo": {
-        "website": "https://stara-fabryka.pl",
-        "email": "stara.fabryka@example.com",
-        "phone": "+48 123 456 789"
-      },
-      "partOfTrail": true
+      "name": "Muzeum Górnośląski Park Etnograficzny",
+      "location": "Chorzów",
+      "category": "EKSPLORUJ",
+      "imageUrl": "https://example.com/muzeum1.jpg"
     },
-      {
+    {
       "id": "2",
-      "name": "Muzeum Przemysłu Włókienniczego",
-      "location": "Łódź",
-      "estimatedVisitDuration": "2h",
-      "imageUrl": "https://example.com/image2.jpg",
-      "partOfTrail": true
+      "name": "Planetarium Śląski Park Nauki",
+      "location": "Chorzów",
+      "category": "EKSPLORUJ",
+      "imageUrl": "https://example.com/planetarium.jpg"
     },
     {
       "id": "3",
-      "name": "Stara Elektrownia",
-      "location": "Katowice",
-      "estimatedVisitDuration": "1h",
-      "imageUrl": "https://example.com/image3.jpg",
-      "partOfTrail": true
+      "name": "Gala muzyki filmowej",
+      "location": "Katowice, Spodek",
+      "category": "WYDARZENIA",
+      "imageUrl": "https://example.com/gala.jpg"
     },
     {
       "id": "4",
-      "name": "Zabytkowa Kopalnia",
-      "location": "Zabrze",
-      "estimatedVisitDuration": "1h",
-      "imageUrl": "https://example.com/image4.jpg",
-      "partOfTrail": true
+      "name": "Muzeum Historyczne",
+      "location": "Bielsko-Biała",
+      "category": "EKSPLORUJ",
+      "imageUrl": "https://example.com/muzeum2.jpg"
     }
   ]
 }
